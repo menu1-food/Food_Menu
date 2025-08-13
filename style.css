@@ -1,0 +1,235 @@
+  /* Reset & basics */
+  #logo{text-align: center;}
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #313131;
+    color: #333;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Header */
+  header {
+    background: #222;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+  }
+    header .logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+  }
+
+
+  /* Banner */
+  .banner {
+    background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    height: 180px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+  }
+  .banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+  }
+  .banner h1 {
+    position: relative;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  .breadcrumb {
+    position: relative;
+    margin-top: 10px;
+    background: #e20f0f;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+  }
+  .breadcrumb span {
+    margin: 0 6px;
+  }
+
+  /* Categories */
+  .categories {
+    max-width: 1200px;
+    margin: 30px auto 20px;
+    display: flex;
+    gap: 15px;
+    padding: 0 15px;
+    justify-content: center;
+  }
+  .category {
+    background: #ffffff;
+    border: 1px solid #000000;
+    padding: 8px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .category:hover,
+  .category.active {
+    background: #ffd1d1;
+    border-color: #ff4b4b;
+  }
+  .category img {
+    width: 18px;
+    height: 18px;
+  }
+  .view-all-btn {
+    background: #e20f0f;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: auto;
+    transition: background-color 0.3s;
+  }
+  .view-all-btn:hover {
+    background: #b00a0a;
+  }
+
+  /* Cards container */
+  .cards-container {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  /* Single card */
+  .card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  .discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #f39c12;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+  .rating {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 15px;
+    padding: 3px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 0.15);
+  }
+  .rating img {
+    width: 14px;
+    height: 14px;
+  }
+  .card-body {
+    padding: 15px 15px 20px;
+  }
+  .card-title {
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+  }
+  .card-desc {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .card-price {
+    font-weight: 700;
+    color: #e20f0f;
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    background: #222;
+    color: #aaa;
+    padding: 30px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  footer > div {
+    flex: 1 1 200px;
+  }
+  .footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    border-top: 1px solid #444;
+    color: #777;
+  }
+  .footer-link {
+  color: #867c1e; /* Red highlight */
+  margin-left: 4px; /* Small space before link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #e9d201;
+}
+
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    header nav ul {
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .categories {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+
+  
